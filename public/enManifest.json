@@ -1,11 +1,20 @@
 {
-  "short_name": "404",
-  "name": "The Root of 163216 = 404",
+  "short_name": "404 - Page Not Found",
+  "name": "The Root of 163216",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "48x48",
       "type": "image/x-icon"
+    },
+    {
+      "src": "mstile-150x150.png",
+      "type": "image/png",
+      "sizes": "270x720"
+    },
+    {
+      "src": "chromium.svg",
+      "type": "image/svg+xml"
     },
     {
       "src": "apple-touch-icon.png",
