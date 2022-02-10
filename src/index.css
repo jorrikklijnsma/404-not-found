@@ -1,3 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.svg-root {
+  stroke: rgb(255, 255, 255);
+  stroke-width: 8px;
+  /* stroke-linecap: round; */
+  /* stroke-linejoin: round; */
+  fill: rgba(216, 216, 216, 0);
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+@media (hover: hover) {
+  .the-root {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transition: clip-path 0.5s ease-in-out;
+  }
+
+  .svg-hover:hover .the-root {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition-delay: 0.4s;
+  }
+
+  .hover-me {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    transition-delay: 0.8s;
+  }
+
+  .svg-hover:hover .svg-root {
+    animation: dash 1s ease-in forwards;
+    animation-delay: 0.2s;
+  }
+
+  .svg-hover:hover .hover-me {
+    opacity: 0;
+    transition-delay: 0s;
+  }
+}
+
+@media (hover: none) {
+  .the-root {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .svg-root {
+    animation: dash 1s ease-in infinite alternate;
+  }
+
+  .hover-me {
+    opacity: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
